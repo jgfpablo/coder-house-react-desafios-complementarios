@@ -4,4 +4,11 @@
     display: flex;
     justify-content: center;
     padding-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.span {
+    border: 1px solid;
+    padding: 5px;
+    cursor: pointer;
 }
