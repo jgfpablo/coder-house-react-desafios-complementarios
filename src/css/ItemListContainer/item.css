@@ -1,0 +1,61 @@
+.list {
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.span {
+    border: 1px solid;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.div-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.div {
+    padding-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 20%;
+    height: 65%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.span {
+    width: 3vw;
+    text-align: center;
+    min-width: 30px;
+}
+
+.agregar-carrito {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+    margin-bottom: 5px;
+}
+
+.btn-agregar-carrito {
+    border: 1px solid;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.nombre-producto {
+    font-size: 2rem;
+    text-align: center;
+}

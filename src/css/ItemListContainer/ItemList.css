@@ -1,14 +1,14 @@
 .list {
+    width: 100vw;
     font-size: 3rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
-    padding-top: 5vh;
     flex-wrap: wrap;
 }
 
-.span {
+/* .span {
     border: 1px solid;
     padding: 5px;
     cursor: pointer;
-}
+} */

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "../../css/ItemListContainer/item.css";
-
-const ItemCount = ({ stock, producto }) => {
+const Item = ({ dato }) => {
     const [count, setCount] = useState(0);
 
     const Sumar = () => {
-        count < stock
+        count < dato.cantidad
             ? setCount(count + 1)
-            : alert(`Maximo de stock alcanzado ${stock}`);
+            : alert(`Maximo de stock alcanzado ${dato.cantidad}.
+            En este momento no se posee mas cantidad de este producto`);
     };
 
     const Restar = () => {
@@ -17,19 +17,29 @@ const ItemCount = ({ stock, producto }) => {
     };
 
     const Agregar = () => {
-        alert("El producto se han agregado al carrito");
-        setCount(0);
+        if (count !== 0) {
+            alert(
+                `El Producto ${dato.nombre} se ah agregado al carrito
+            por la cantidad de ${count}`
+            );
+            dato.cantidad = dato.cantidad - count;
+            setCount(0);
+        } else {
+            alert(
+                "Para agregar un producto al carrito la cantidad debe de ser mayor a 0"
+            );
+        }
     };
 
     return (
         <div className="div-item">
-            <span className="nombre-producto"> {producto} </span>
+            <span className="nombre-producto"> {dato.nombre} </span>
 
             <img
-                alt="PruebaItemCount"
-                src={`https://robohash.org/${producto}`}
+                src={dato.imagen}
                 width="300px"
-                height={300}
+                height="300px"
+                alt="imagen-producto"
             />
 
             <div className="div">
@@ -65,4 +75,4 @@ const ItemCount = ({ stock, producto }) => {
     );
 };
 
-export default ItemCount;
+export default Item;
