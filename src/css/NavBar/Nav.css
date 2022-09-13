@@ -1,43 +1,14 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-/* -----NavBar----- */
-.nav-full {
-    display: flex;
-    background-color: #102c54;
-    color: white;
-    height: 15vh;
-    align-items: center;
-    width: 100vw;
-}
-
-/* -----Logo----- */
-
-.logo {
-    width: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-/* -----Nav----- */
 .nav {
     display: flex;
     height: 10vh;
     width: 60vw;
     margin: auto;
     align-items: center;
-    border-radius: 0px 0px 100px 100px;
-    background-color: white;
-    color: black;
+    color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
-
     animation-name: animacion;
     animation-duration: 2s;
+    text-decoration: none;
 }
 
 .navegacion {
@@ -45,49 +16,8 @@
 }
 
 .ul {
+    text-decoration: none;
     display: flex;
     list-style: none;
     justify-content: space-around;
-}
-
-/* -----cartWidget----- */
-
-.cartWidget {
-    width: 20vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-}
-
-.carrito {
-    color: white;
-}
-
-.carrito:hover {
-    color: yellow;
-}
-
-/* -----Animaciones----- */
-
-@keyframes animacion {
-    0% {
-        color: white;
-    }
-
-    25% {
-        color: rgb(201, 201, 201);
-    }
-
-    50% {
-        color: rgb(144, 144, 144);
-    }
-
-    75% {
-        color: rgb(73, 73, 73);
-    }
-
-    100% {
-        color: rgb(0, 0, 0);
-    }
 }

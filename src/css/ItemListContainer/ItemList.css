@@ -1,14 +1,10 @@
-.list {
-    width: 100vw;
-    font-size: 3rem;
-    font-weight: bold;
+.ItemDetailContainer {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    border: 2px black solid;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
 }
-
-/* .span {
-    border: 1px solid;
-    padding: 5px;
-    cursor: pointer;
-} */

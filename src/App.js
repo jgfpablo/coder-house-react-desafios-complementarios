@@ -1,13 +1,8 @@
-import { ItemListContainer } from "./components/ItemListContainer";
-import { NavBar } from "./components/NavBar";
+import Router from "./components/Router";
+import "./css/css.css";
 
 function App() {
-    return (
-        <>
-            <NavBar />
-            <ItemListContainer />
-        </>
-    );
+    return <Router />;
 }
 
 export default App;

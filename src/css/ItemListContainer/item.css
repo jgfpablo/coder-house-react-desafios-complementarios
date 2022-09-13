@@ -1,4 +1,4 @@
-.list {
+/* .list {
     font-size: 3rem;
     font-weight: bold;
     display: flex;
@@ -20,7 +20,104 @@
     margin: 10px;
 }
 
-.div {
+.nombre-producto {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.cosa {
+    width: 500px;
+    height: 500px;
+    color: black;
+    background-color: white;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-Button-true {
+    display: inline;
+}
+.toggle-Button-false {
+    display: none;
+}
+
+.modal-true {
+    display: flex;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.5s;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.modal-false {
+    display: none;
+}
+
+.div-modal {
+    background-color: white;
+    width: 50vw;
+    height: 30vw;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.div-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
+/* --------------------------- */
+
+.card-products {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    border: 1px black solid;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+}
+
+.product-img {
+    width: 300px;
+    height: 300px;
+}
+
+.product-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    height: 100px;
+}
+
+.div-actions {
     padding-top: 1vw;
     display: flex;
     justify-content: center;
@@ -35,27 +132,24 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-.span {
+
+.span-count-order {
     width: 3vw;
     text-align: center;
     min-width: 30px;
 }
 
-.agregar-carrito {
+.div-add-cart {
     font-size: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 1vw;
     margin-bottom: 5px;
+    width: 100%;
 }
 
-.btn-agregar-carrito {
+.btn-add-cart {
     border: 1px solid;
     padding: 5px;
     cursor: pointer;
-}
-
-.nombre-producto {
-    font-size: 2rem;
-    text-align: center;
 }

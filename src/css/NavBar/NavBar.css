@@ -1,0 +1,7 @@
+.nav-full {
+    display: flex;
+    background-color: black;
+    color: white;
+    height: 15vh;
+    align-items: center;
+}

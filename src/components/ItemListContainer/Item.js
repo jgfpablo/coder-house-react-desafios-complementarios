@@ -1,22 +1,24 @@
 import { useState } from "react";
 import "../../css/ItemListContainer/item.css";
-const Item = ({ dato }) => {
+const Item = ({ dato, Details }) => {
     const [count, setCount] = useState(0);
 
-    const Sumar = () => {
+    const open = true;
+
+    const Add = () => {
         count < dato.cantidad
             ? setCount(count + 1)
             : alert(`Maximo de stock alcanzado ${dato.cantidad}.
             En este momento no se posee mas cantidad de este producto`);
     };
 
-    const Restar = () => {
+    const Subtract = () => {
         count === 0
             ? alert("La cantidad minima ya ah sido alcanzada")
             : setCount(count - 1);
     };
 
-    const Agregar = () => {
+    const AddToCart = () => {
         if (count !== 0) {
             alert(
                 `El Producto ${dato.nombre} se ah agregado al carrito
@@ -32,43 +34,49 @@ const Item = ({ dato }) => {
     };
 
     return (
-        <div className="div-item">
-            <span className="nombre-producto"> {dato.nombre} </span>
+        <div className="card-products">
+            <img className="product-img" src={dato.imagen} alt="img-product" />
 
-            <img
-                src={dato.imagen}
-                width="300px"
-                height="300px"
-                alt="imagen-producto"
-            />
+            <span className="product-name"> {dato.nombre} </span>
 
-            <div className="div">
+            <div className="div-actions">
                 <button
                     onClick={() => {
-                        Restar();
+                        Subtract();
                     }}
                     className="button"
                 >
                     -
                 </button>
-                <span className="span">{count}</span>
+
+                <span className="span-count-order">{count}</span>
                 <button
                     onClick={() => {
-                        Sumar();
+                        Add();
                     }}
                     className="button"
                 >
                     +
                 </button>
             </div>
-            <div className="agregar-carrito">
+
+            <div className="div-add-cart">
                 <span
                     onClick={() => {
-                        Agregar();
+                        AddToCart();
                     }}
-                    className="btn-agregar-carrito"
+                    className="btn-add-cart"
                 >
                     Agregar Al Carrito
+                </span>
+
+                <span
+                    onClick={() => {
+                        Details(dato, open);
+                    }}
+                    className="btn-add-cart"
+                >
+                    Preview
                 </span>
             </div>
         </div>

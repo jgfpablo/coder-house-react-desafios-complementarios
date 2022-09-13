@@ -1,0 +1,15 @@
+.cartWidget {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.carrito {
+    color: white;
+}
+
+.carrito:hover {
+    color: yellow;
+}

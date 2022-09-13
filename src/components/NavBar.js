@@ -1,4 +1,4 @@
-import "../css/NavBar/Nav.css";
+import "../css/NavBar/NavBar.css";
 
 import CartWidget from "./NavBar/CartWidget";
 import Logo from "./NavBar/Logo";
