@@ -1,22 +1,14 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 import Item from "./Item";
-import productos from "../../api";
+// import productos from "../../api";
 
 import "../../css/ItemListContainer/ItemList.css";
-const ItemList = ({ Details }) => {
-    const [datos, setDatos] = useState([]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            productos.then((res) => setDatos(res));
-        }, 3000);
-    }, []);
-
+const ItemList = ({ Data }) => {
     return (
         <div className="list">
-            {datos.map((dato, index) => {
-                return <Item dato={dato} key={index} Details={Details} />;
+            {Data.map((item, index) => {
+                return <Item item={item} key={index} />;
             })}
         </div>
     );

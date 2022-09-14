@@ -6,29 +6,9 @@ export const Nav = () => {
         <div className="nav">
             <div className="navegacion">
                 <ul className="ul">
-                    <li>
-                        <Link
-                            style={{
-                                textDecoration: "none",
-                                color: "rgb(255, 255, 255, 0.75)",
-                            }}
-                            to={`/`}
-                        >
-                            Inicio
-                        </Link>
-                    </li>
+                    <li>inicio</li>
                     <li>Nosotros</li>
-                    <li>
-                        <Link
-                            style={{
-                                textDecoration: "none",
-                                color: "rgba(255, 255, 255, 0.75)",
-                            }}
-                            to={"/"}
-                        >
-                            Productos
-                        </Link>
-                    </li>
+                    <li>Menu</li>
                 </ul>
             </div>
         </div>

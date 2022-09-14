@@ -7,6 +7,8 @@ const productos = new Promise((resolve) => {
             cantidad: 3,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Macchiato-Bombóm.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 1,
@@ -15,6 +17,8 @@ const productos = new Promise((resolve) => {
             cantidad: 2,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Cappuccino-Moka.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 2,
@@ -23,6 +27,8 @@ const productos = new Promise((resolve) => {
             cantidad: 1,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Cappuccino.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 3,
@@ -31,6 +37,8 @@ const productos = new Promise((resolve) => {
             cantidad: 7,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Capuccino-Tentación.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 4,
@@ -39,6 +47,8 @@ const productos = new Promise((resolve) => {
             cantidad: 9,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Cappuccino-Bombóm.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 5,
@@ -47,6 +57,8 @@ const productos = new Promise((resolve) => {
             cantidad: 0,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Macchiato.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 6,
@@ -55,6 +67,8 @@ const productos = new Promise((resolve) => {
             cantidad: 7,
             categoria: "Bebidas Frias",
             imagen: "../assets/img/productos/bebidas_frias/te-frambuesa.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 7,
@@ -63,6 +77,8 @@ const productos = new Promise((resolve) => {
             cantidad: 3,
             categoria: "Bebidas Frias",
             imagen: "../assets/img/productos/bebidas_frias/te-limon.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 8,
@@ -71,6 +87,8 @@ const productos = new Promise((resolve) => {
             cantidad: 2,
             categoria: "Bebidas Frias",
             imagen: "../assets/img/productos/bebidas_frias/te-naranja.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 9,
@@ -79,6 +97,8 @@ const productos = new Promise((resolve) => {
             cantidad: 5,
             categoria: "Salados",
             imagen: "../assets/img/productos/salados/Tostado-4-quesos.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 10,
@@ -87,6 +107,8 @@ const productos = new Promise((resolve) => {
             cantidad: 6,
             categoria: "Salados",
             imagen: "../assets/img/productos/salados/Tostado-mixto.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 11,
@@ -95,6 +117,8 @@ const productos = new Promise((resolve) => {
             cantidad: 3,
             categoria: "Salados",
             imagen: "../assets/img/productos/salados/Tostado-napolitano.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 12,
@@ -103,6 +127,8 @@ const productos = new Promise((resolve) => {
             cantidad: 2,
             categoria: "Postres",
             imagen: "../assets/img/productos/dulces/flan_casero.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
         {
             id: 13,
@@ -111,6 +137,8 @@ const productos = new Promise((resolve) => {
             cantidad: 1,
             categoria: "Postres",
             imagen: "../assets/img/productos/dulces/pay_de_queso.png",
+            descripcion:
+                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
         },
     ]);
 });

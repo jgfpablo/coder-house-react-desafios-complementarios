@@ -1,0 +1,39 @@
+.Item-Detail-Container {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Item-Detail {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.inline {
+    display: inline;
+}
+
+.img-detail {
+    width: 30vw;
+}
+.description {
+    width: 30vw;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.text-detail-description {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}

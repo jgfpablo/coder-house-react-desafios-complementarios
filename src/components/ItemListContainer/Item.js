@@ -1,14 +1,12 @@
 import { useState } from "react";
 import "../../css/ItemListContainer/item.css";
-const Item = ({ dato, Details }) => {
+const Item = ({ item }) => {
     const [count, setCount] = useState(0);
 
-    const open = true;
-
     const Add = () => {
-        count < dato.cantidad
+        count < item.cantidad
             ? setCount(count + 1)
-            : alert(`Maximo de stock alcanzado ${dato.cantidad}.
+            : alert(`Maximo de stock alcanzado ${item.cantidad}.
             En este momento no se posee mas cantidad de este producto`);
     };
 
@@ -21,10 +19,10 @@ const Item = ({ dato, Details }) => {
     const AddToCart = () => {
         if (count !== 0) {
             alert(
-                `El Producto ${dato.nombre} se ah agregado al carrito
+                `El Producto ${item.nombre} se ah agregado al carrito
             por la cantidad de ${count}`
             );
-            dato.cantidad = dato.cantidad - count;
+            item.cantidad = item.cantidad - count;
             setCount(0);
         } else {
             alert(
@@ -35,9 +33,9 @@ const Item = ({ dato, Details }) => {
 
     return (
         <div className="card-products">
-            <img className="product-img" src={dato.imagen} alt="img-product" />
+            <img className="product-img" src={item.imagen} alt="img-product" />
 
-            <span className="product-name"> {dato.nombre} </span>
+            <span className="product-name"> {item.nombre} </span>
 
             <div className="div-actions">
                 <button
@@ -70,14 +68,7 @@ const Item = ({ dato, Details }) => {
                     Agregar Al Carrito
                 </span>
 
-                <span
-                    onClick={() => {
-                        Details(dato, open);
-                    }}
-                    className="btn-add-cart"
-                >
-                    Preview
-                </span>
+                <span className="btn-add-cart">Preview</span>
             </div>
         </div>
     );

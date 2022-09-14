@@ -1,29 +1,21 @@
 import ItemList from "./ItemListContainer/ItemList";
-import { useState } from "react";
-import ItemDetailContainer from "./ItemListContainer/ItemDetailContainer";
-import { useParams } from "react-router-dom";
-
+import productos from "../api";
 import "../css/ItemListContainer/ItemListContainer.css";
 
-export const ItemListContainer = () => {
-    const params = useParams();
-    console.log(params);
-    const [preview, setPreview] = useState([""]);
-    const [open, setOpen] = useState(false);
+import { useEffect, useState } from "react";
 
-    const Details = (product, open) => {
-        setPreview(product);
-        setOpen(open);
-    };
+export const ItemListContainer = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            productos.then((res) => setData(res));
+        }, 3000);
+    }, []);
 
     return (
         <div className="list">
-            <ItemList Details={Details} />
-            <ItemDetailContainer
-                Preview={preview}
-                Open={open}
-                Details={Details}
-            />
+            <ItemList Data={data} />
         </div>
     );
 };
