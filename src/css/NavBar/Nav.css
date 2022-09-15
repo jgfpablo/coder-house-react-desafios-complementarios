@@ -9,6 +9,7 @@
     animation-name: animacion;
     animation-duration: 2s;
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .navegacion {

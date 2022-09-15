@@ -3,13 +3,17 @@ import "../../css/ItemDetail/ItemDetail.css";
 import React from "react";
 
 const ItemDetail = ({ data }) => {
-    console.log(data);
     return (
         <div className="Item-Detail-Container">
             <h1>Item Detail</h1>
 
             <div className="Item-Detail">
-                <img width={100} className="img-detail" src={data.imagen} />
+                <img
+                    width={100}
+                    alt="producto"
+                    className="img-detail"
+                    src={data.imagen}
+                />
                 <div className="description">
                     <p className="text-center">{data.nombre}</p>
                     <p className="text-center">stock: {data.cantidad}</p>

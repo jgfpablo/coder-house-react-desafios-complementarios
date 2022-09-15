@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../../css/ItemListContainer/item.css";
 const Item = ({ item }) => {
     const [count, setCount] = useState(0);
@@ -68,7 +69,9 @@ const Item = ({ item }) => {
                     Agregar Al Carrito
                 </span>
 
-                <span className="btn-add-cart">Preview</span>
+                <span className="btn-add-cart">
+                    <Link to={`item/` + item.id}>Preview</Link>
+                </span>
             </div>
         </div>
     );
