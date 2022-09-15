@@ -5,8 +5,6 @@ import React from "react";
 const ItemDetail = ({ data }) => {
     return (
         <div className="Item-Detail-Container">
-            <h1>Item Detail</h1>
-
             <div className="Item-Detail">
                 <img
                     width={100}
@@ -15,13 +13,20 @@ const ItemDetail = ({ data }) => {
                     src={data.imagen}
                 />
                 <div className="description">
-                    <p className="text-center">{data.nombre}</p>
-                    <p className="text-center">stock: {data.cantidad}</p>
-                    <p className="text-center">precio: {data.precio}</p>
-                    <span className="text-detail-description">
+                    <h1 className="text-center item-detail-name">
+                        {data.nombre}
+                    </h1>
+                    <p className="text-center item-detail-stock">
+                        stock: {data.cantidad}
+                    </p>
+                    <p className="text-center item-detail-price">
+                        precio: {data.precio}
+                    </p>
+
+                    <p className=" item-detail-description">
                         Descripcion:
                         {data.descripcion}
-                    </span>
+                    </p>
                 </div>
             </div>
         </div>

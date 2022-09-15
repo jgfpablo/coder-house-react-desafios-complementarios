@@ -70,7 +70,7 @@ const Item = ({ item }) => {
                 </span>
 
                 <span className="btn-add-cart">
-                    <Link to={`item/` + item.id}>Preview</Link>
+                    <Link to={`/item/` + item.id}>Preview</Link>
                 </span>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetailContainer/ItemDetail";
-import productos from "../api";
+import productos from "../products";
 import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
@@ -11,7 +11,7 @@ export const ItemDetailContainer = () => {
     useEffect(() => {
         setTimeout(() => {
             productos.then((res) => setData(res[idProduct]));
-        }, 3000);
+        }, 2000);
     }, []);
 
     return <ItemDetail data={data} />;

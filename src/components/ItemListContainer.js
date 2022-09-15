@@ -1,5 +1,5 @@
 import ItemList from "./ItemListContainer/ItemList";
-import productos from "../api";
+import productos from "../products";
 import "../css/ItemListContainer/ItemListContainer.css";
 
 import { useEffect, useState } from "react";
@@ -16,11 +16,11 @@ export const ItemListContainer = () => {
                 productos.then((res) =>
                     setData(res.filter((res) => res.categoria === idCategory))
                 );
-            }, 3000);
+            }, 2000);
         } else {
             setTimeout(() => {
                 productos.then((res) => setData(res));
-            }, 3000);
+            }, 2000);
         }
     }, [idCategory]);
 

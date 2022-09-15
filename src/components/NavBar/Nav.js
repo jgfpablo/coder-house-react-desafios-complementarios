@@ -1,34 +1,44 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import category from "../../categories";
 import "../../css/NavBar/Nav.css";
 
 export const Nav = () => {
-    const category = "Bebidas Calientes";
+    const [categories, setCategories] = useState([]);
 
-    return (
-        <div className="nav">
-            <div className="navegacion">
-                <ul className="ul">
-                    <li>
-                        <Link to="/">Inicio</Link>
-                    </li>
-                    <li>
-                        <Link to={"/category/Bebidas Calientes"}>
-                            BebidasCalientes
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={"/category/Bebidas Frias"}>BebidasFrias</Link>
-                    </li>
-                    <li>
-                        <Link to={"/category/Salados"}>Salados</Link>
-                    </li>
-                    <li>
-                        <Link to={"/category/Postres"}>Postres</Link>
-                    </li>
-                </ul>
+    useEffect(() => {
+        setTimeout(() => {
+            category.then((res) => setCategories(res));
+        }, 1000);
+    }, []);
+    console.log(categories);
+
+    if (categories) {
+        return (
+            <div className="nav">
+                <div className="navegacion">
+                    <ul className="ul">
+                        <li className="nav-li">
+                            <Link to="/">Inicio</Link>
+                        </li>
+
+                        {categories.map((category, index) => {
+                            return (
+                                <li className="nav-li" key={index}>
+                                    <Link
+                                        key={index}
+                                        to={"/category/" + category.categoria}
+                                    >
+                                        {category.categoria}
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
 
 export default Nav;

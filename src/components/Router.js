@@ -4,6 +4,7 @@ import { ItemListContainer } from "./ItemListContainer";
 import { ItemDetailContainer } from "./ItemDetailContainer";
 
 import { NavBar } from "./NavBar";
+import Footer from "./Footer";
 
 export const Router = () => {
     return (
@@ -23,6 +24,7 @@ export const Router = () => {
                         element={<ItemDetailContainer />}
                     />
                 </Routes>
+                <Footer />
             </BrowserRouter>
         </>
     );
