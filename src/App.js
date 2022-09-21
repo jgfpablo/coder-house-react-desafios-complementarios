@@ -1,12 +1,13 @@
+import CartContext from "./components/Context/CartContext";
 import { Router } from "./components/Router";
 
 import "./css/css.css";
 
 function App() {
     return (
-        <div>
+        <CartContext>
             <Router />
-        </div>
+        </CartContext>
     );
 }
 

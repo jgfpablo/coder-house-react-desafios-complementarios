@@ -28,3 +28,7 @@
     list-style: none;
     justify-content: space-around;
 }
+
+.active {
+    color: #d3ad7f;
+}

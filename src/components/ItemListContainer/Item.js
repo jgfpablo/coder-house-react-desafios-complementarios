@@ -1,20 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/ItemListContainer/item.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 const Item = ({ item }) => {
+    const MySwal = withReactContent(Swal);
     const [count, setCount] = useState(0);
 
     const Add = () => {
-        count < item.cantidad
-            ? setCount(count + 1)
-            : alert(`Maximo de stock alcanzado ${item.cantidad}.
-            En este momento no se posee mas cantidad de este producto`);
+        if (count === 0) {
+            MySwal.fire({
+                html: <i>No quedan mas existencias de este producto!</i>,
+                icon: "warning",
+            });
+        } else {
+            setCount(count + 1);
+        }
     };
 
     const Subtract = () => {
-        count === 0
-            ? alert("La cantidad minima ya ah sido alcanzada")
-            : setCount(count - 1);
+        if (count === 0) {
+            MySwal.fire({
+                html: (
+                    <i>La cantidad minima de producto ya ah sido alcanzada!</i>
+                ),
+                icon: "warning",
+            });
+        } else {
+            setCount(count - 1);
+        }
     };
 
     const AddToCart = () => {
@@ -24,7 +39,7 @@ const Item = ({ item }) => {
             por la cantidad de ${count}`
             );
             item.cantidad = item.cantidad - count;
-            setCount(0);
+            // setCount(0);
         } else {
             alert(
                 "Para agregar un producto al carrito la cantidad debe de ser mayor a 0"
@@ -49,6 +64,7 @@ const Item = ({ item }) => {
                 </button>
 
                 <span className="span-count-order">{count}</span>
+
                 <button
                     onClick={() => {
                         Add();

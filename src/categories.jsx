@@ -2,12 +2,12 @@ const category = new Promise((resolve) => {
     resolve([
         {
             id: 0,
-            categoria: "Bebidas Calientes",
+            categoria: "Bebidas-Calientes",
         },
 
         {
             id: 1,
-            categoria: "Bebidas Frias",
+            categoria: "Bebidas-Frias",
         },
 
         {

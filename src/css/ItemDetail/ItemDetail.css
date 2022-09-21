@@ -15,7 +15,7 @@
     flex-direction: row;
     min-height: 450px;
     max-width: 50vw;
-    background-image: url("../../../public/fondo.jpg");
+    background-image: url("../../../public/fondo-detail.jpg");
     background-size: cover;
     color: white;
 }
@@ -63,7 +63,36 @@
 }
 
 .item-detail-description {
-    padding-top: 20%;
+    padding-top: 20px;
+    color: #d3ad7f;
+
     font-weight: 800;
     font-size: 1.5rem;
+}
+.swal2-icon-content {
+    text-align: center;
+    justify-content: center;
+}
+strong {
+    text-align: center;
+}
+
+.swal2-container.swal2-center > .swal2-popup {
+    background-color: black;
+}
+
+.swal2-html-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+i {
+    color: #d3ad7f;
+    font-size: 1.5rem;
+    padding-right: 50px;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: rgb(13, 172, 13) !important;
 }

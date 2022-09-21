@@ -14,7 +14,12 @@ export const ItemListContainer = () => {
         if (idCategory) {
             setTimeout(() => {
                 productos.then((res) =>
-                    setData(res.filter((res) => res.categoria === idCategory))
+                    setData(
+                        res.filter(
+                            (res) =>
+                                res.categoria === idCategory.replace("-", " ")
+                        )
+                    )
                 );
             }, 2000);
         } else {

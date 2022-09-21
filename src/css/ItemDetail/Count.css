@@ -1,0 +1,61 @@
+.div-add-cart {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1vw;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #af8b5f;
+    color: black;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+}
+
+.btn-add-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+    background-color: #af8b5f;
+    color: black;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.span-count-order {
+    width: 30%;
+    text-align: center;
+    background-color: #af8b5f;
+    color: black;
+    font-weight: bold;
+}
+
+.title {
+    padding-top: 30px;
+    text-align: center;
+    color: #af8b5f;
+    font-weight: bold;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}

@@ -5,11 +5,14 @@
     align-items: center;
     font-size: 1.5rem;
 }
+.active {
+    color: #d3ad7f !important;
+}
 
 .carrito {
     color: white;
 }
 
 .carrito:hover {
-    color: yellow;
+    color: #d3ad7f;
 }

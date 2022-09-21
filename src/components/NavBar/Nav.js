@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import category from "../../categories";
 import "../../css/NavBar/Nav.css";
 
@@ -11,7 +11,6 @@ export const Nav = () => {
             category.then((res) => setCategories(res));
         }, 1000);
     }, []);
-    console.log(categories);
 
     if (categories) {
         return (
@@ -19,18 +18,28 @@ export const Nav = () => {
                 <div className="navegacion">
                     <ul className="ul">
                         <li className="nav-li">
-                            <Link to="/">Inicio</Link>
+                            <NavLink
+                                to="/"
+                                className={(navData) =>
+                                    navData.isActive ? "active" : ""
+                                }
+                            >
+                                Inicio
+                            </NavLink>
                         </li>
 
                         {categories.map((category, index) => {
                             return (
                                 <li className="nav-li" key={index}>
-                                    <Link
+                                    <NavLink
+                                        className={(navData) =>
+                                            navData.isActive ? "active" : ""
+                                        }
                                         key={index}
                                         to={"/category/" + category.categoria}
                                     >
                                         {category.categoria}
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             );
                         })}

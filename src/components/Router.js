@@ -5,6 +5,7 @@ import { ItemDetailContainer } from "./ItemDetailContainer";
 
 import { NavBar } from "./NavBar";
 import Footer from "./Footer";
+import Cart from "./Cart";
 
 export const Router = () => {
     return (
@@ -23,6 +24,8 @@ export const Router = () => {
                         path={`item/:idProduct`}
                         element={<ItemDetailContainer />}
                     />
+
+                    <Route path={`/cart`} element={<Cart />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

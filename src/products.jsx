@@ -4,7 +4,7 @@ const productos = new Promise((resolve) => {
             id: 0,
             nombre: "Macchiato Bombom",
             precio: 240,
-            cantidad: 3,
+            cantidad: 13,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Macchiato-Bombóm.png",
             descripcion:
@@ -14,7 +14,7 @@ const productos = new Promise((resolve) => {
             id: 1,
             nombre: "Cappuccino Moka",
             precio: 240,
-            cantidad: 2,
+            cantidad: 12,
             categoria: "Bebidas Calientes",
             imagen: "../assets/img/productos/bebidas_calientes/Cappuccino-Moka.png",
             descripcion:
