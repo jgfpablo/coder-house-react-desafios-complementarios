@@ -9,17 +9,29 @@ const ItemCount = ({ Count, Add, Subtract, agregarAlCarrito }) => {
     const [open, setOpen] = useState(true);
 
     const alerta = () => {
-        setOpen(false);
-        toast.info("Se agrego el producto al carrito!", {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-        agregarAlCarrito();
+        if (Count === 0) {
+            toast.info("Debe Agregar almenos 1 producto!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } else {
+            setOpen(false);
+            toast.info("Se agrego el producto al carrito!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+            agregarAlCarrito();
+        }
     };
 
     return (

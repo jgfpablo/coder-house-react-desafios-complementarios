@@ -96,3 +96,13 @@ i {
 .swal2-styled.swal2-confirm {
     background-color: rgb(13, 172, 13) !important;
 }
+
+.loader {
+    width: 40%;
+}
+.div-loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}

@@ -1,7 +1,4 @@
-// import { useEffect, useState } from "react";
-
 import Item from "./Item";
-// import productos from "../../api";
 
 import "../../css/ItemListContainer/ItemList.css";
 const ItemList = ({ Data }) => {

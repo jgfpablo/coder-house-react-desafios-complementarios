@@ -10,7 +10,10 @@ export const ItemListContainer = () => {
 
     const { idCategory } = useParams();
 
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
+        setLoading(false);
         if (idCategory) {
             setTimeout(() => {
                 productos.then((res) =>
@@ -21,17 +24,28 @@ export const ItemListContainer = () => {
                         )
                     )
                 );
+                setLoading(true);
             }, 2000);
         } else {
+            setLoading(false);
             setTimeout(() => {
                 productos.then((res) => setData(res));
+                setLoading(true);
             }, 2000);
         }
     }, [idCategory]);
 
-    return (
+    return loading === true ? (
         <div className="list">
             <ItemList Data={data} />
+        </div>
+    ) : (
+        <div className="div-loader">
+            <img
+                alt="loader"
+                className="loader"
+                src="../assets/img/loader.svg"
+            />
         </div>
     );
 };

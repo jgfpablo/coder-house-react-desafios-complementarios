@@ -1,6 +1,6 @@
 import "../../css/ItemDetail/ItemDetail.css";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import ItemCount from "./ItemCount";
 
 import Swal from "sweetalert2";
@@ -10,42 +10,15 @@ import { ContextCart } from "../Context/CartContext";
 const ItemDetail = ({ data }) => {
     const MySwal = withReactContent(Swal);
     const [count, setCount] = useState(0);
-    const [quantity, setQuantity] = useState();
-
-    const { state, setState } = useContext(ContextCart);
-
-    useEffect(() => {
-        if (state.find((stat) => data.id === stat.id)) {
-            state.map((stat) => {
-                if (stat.id === data.id) {
-                    setQuantity(data.cantidad - state[stat.id].cantidad);
-                    setCount(state[stat.id].cantidad);
-                }
-            });
-        } else {
-            setQuantity(data.cantidad);
-        }
-    }, [data]);
+    const { AddToCartList } = useContext(ContextCart);
 
     const agregarAlCarrito = () => {
-        if (state.find((stat) => data.id === stat.id)) {
-            state.map((stat) => {
-                if (stat.id === data.id) {
-                    state[stat.id].cantidad = state[stat.id].cantidad + count;
-                }
-            });
-        } else {
-            let datos = { ...data };
-
-            datos.cantidad = count;
-
-            setState([...state, datos]);
-            setCount(0);
-        }
+        AddToCartList(data, count);
+        setCount(0);
     };
 
     const Add = () => {
-        if (count >= quantity) {
+        if (count === data.cantidad) {
             MySwal.fire({
                 html: <i>No quedan mas existencias de este producto!</i>,
                 icon: "warning",
@@ -68,7 +41,7 @@ const ItemDetail = ({ data }) => {
         }
     };
 
-    return (
+    return data.imagen !== undefined ? (
         <div className="Item-Detail-Container">
             <div className="Item-Detail">
                 <img
@@ -82,7 +55,7 @@ const ItemDetail = ({ data }) => {
                         {data.nombre}
                     </h1>
                     <p className="text-center item-detail-stock">
-                        stock: {quantity}
+                        stock: {data.cantidad}
                     </p>
                     <p className="text-center item-detail-price">
                         precio: {data.precio}
@@ -104,6 +77,14 @@ const ItemDetail = ({ data }) => {
                     </div>
                 </div>
             </div>
+        </div>
+    ) : (
+        <div className="div-loader">
+            <img
+                alt="loader"
+                className="loader"
+                src="../assets/img/loader.svg"
+            />
         </div>
     );
 };

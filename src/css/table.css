@@ -1,6 +1,8 @@
 .table-container {
     display: flex;
     justify-content: center;
+    background-color: #1b1b1f;
+    min-height: 40vw;
 }
 
 table {
@@ -17,10 +19,8 @@ th {
     font-weight: normal;
     padding: 8px;
     background: #1b1b1f;
-
     border-bottom: 1px solid #fff;
     color: #d3ad7f;
-
     text-align: center;
     width: 25%;
 }
@@ -28,18 +28,67 @@ th {
 td {
     padding: 8px;
     background: #1b1b1f;
-
     border-bottom: 1px solid #fff;
     color: #d3ad7f;
-
     border-top: 1px solid transparent;
-    width: 25%;
+    width: 20%;
     text-align: center;
     font-size: 1.5rem;
 }
 
 tr:hover td {
     background: #2f2f38;
-
     color: #b28a59;
+}
+
+.text-cart {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #b28a59;
+}
+
+.div-delete {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b1b1f;
+    display: flex;
+    justify-content: center;
+}
+.cart {
+    display: flex;
+    flex-direction: column;
+    background-color: #1b1b1f;
+}
+
+.btn-delete {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 30px;
+    background-color: #b28a59;
+    color: black;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.quitar {
+    width: 100px;
+    height: 50px;
+    background-color: #b28a59;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
 }
