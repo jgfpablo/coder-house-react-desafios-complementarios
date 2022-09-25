@@ -1,18 +1,29 @@
-import { useContext, useEffect, useState } from "react";
 import ItemDetail from "./ItemDetailContainer/ItemDetail";
-import productos from "../products";
+import loader from "../assets/loader.svg";
+import products from "../products";
+import { useState } from "react";
+import "../css/ItemDetailContainer/ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState();
+    const [loading, setLoading] = useState(true);
+    const { itemId } = useParams();
 
-export const ItemDetailContainer = () => {
-    const [data, setData] = useState([]);
+    setTimeout(() => {
+        products
+            .then((products) => setItem(products[itemId]))
+            .then(setLoading(false));
+    }, 3000);
 
-    const { idProduct } = useParams();
-
-    useEffect(() => {
-        setTimeout(() => {
-            productos.then((res) => setData(res[idProduct]));
-        }, 2000);
-    }, [idProduct]);
-
-    return <ItemDetail data={data} />;
+    return loading === false ? (
+        <div className="ItemDetailContainer">
+            <ItemDetail item={item} />
+        </div>
+    ) : (
+        <div className="loader">
+            <img alt="loader" src={loader} />
+        </div>
+    );
 };
+
+export default ItemDetailContainer;

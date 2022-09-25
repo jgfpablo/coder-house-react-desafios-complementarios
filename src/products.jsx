@@ -1,4 +1,4 @@
-const productos = new Promise((resolve) => {
+const products = new Promise((resolve) => {
     resolve([
         {
             id: 0,
@@ -143,4 +143,4 @@ const productos = new Promise((resolve) => {
     ]);
 });
 
-export default productos;
+export default products;

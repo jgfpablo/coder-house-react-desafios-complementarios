@@ -1,90 +1,37 @@
-import "../../css/ItemDetail/ItemDetail.css";
-
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../Context/CartProvider";
+import "../../css/ItemDetailContainer/ItemDetail.css";
 import ItemCount from "./ItemCount";
+import { AddedProduct, ToastContainer } from "./ItemCount/AlertsAndCounts";
 
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-import { ContextCart } from "../Context/CartContext";
-
-const ItemDetail = ({ data }) => {
-    const MySwal = withReactContent(Swal);
+const ItemDetail = ({ item }) => {
     const [count, setCount] = useState(0);
-    const { AddToCartList } = useContext(ContextCart);
+    const [visibility, setVisibility] = useState(true);
+    const { AddItemToList } = useContext(CartContext);
 
-    const agregarAlCarrito = () => {
-        AddToCartList(data, count);
-        setCount(0);
+    const AddToCart = () => {
+        setVisibility(false);
+        AddItemToList(item, count);
+        AddedProduct();
     };
 
-    const Add = () => {
-        if (count === data.cantidad) {
-            MySwal.fire({
-                html: <i>No quedan mas existencias de este producto!</i>,
-                icon: "warning",
-            });
-        } else {
-            setCount(count + 1);
-        }
-    };
-
-    const Subtract = () => {
-        if (count === 0) {
-            MySwal.fire({
-                html: (
-                    <i>La cantidad minima de producto ya ah sido alcanzada!</i>
-                ),
-                icon: "warning",
-            });
-        } else {
-            setCount(count - 1);
-        }
-    };
-
-    return data.imagen !== undefined ? (
-        <div className="Item-Detail-Container">
-            <div className="Item-Detail">
-                <img
-                    width={100}
-                    alt="producto"
-                    className="img-detail"
-                    src={data.imagen}
+    return (
+        <div className="ItemDetail">
+            <img className="img" alt="producto" src={item.imagen} />
+            <div className="card-itemDetail">
+                <span>{item.nombre}</span>
+                <span>Descripcion: {item.descripcion}</span>
+                <span>Precio: $ {item.precio}</span>
+                <span>Cantidad Disponible:{item.cantidad}</span>
+                <ItemCount
+                    count={count}
+                    setCount={setCount}
+                    AddToCart={AddToCart}
+                    visibility={visibility}
+                    data={item}
                 />
-                <div className="description">
-                    <h1 className="text-center item-detail-name">
-                        {data.nombre}
-                    </h1>
-                    <p className="text-center item-detail-stock">
-                        stock: {data.cantidad}
-                    </p>
-                    <p className="text-center item-detail-price">
-                        precio: {data.precio}
-                    </p>
-
-                    <p className=" item-detail-description">
-                        Descripcion:
-                        {data.descripcion}
-                    </p>
-
-                    <div>
-                        <ItemCount
-                            agregarAlCarrito={agregarAlCarrito}
-                            Count={count}
-                            Add={Add}
-                            Subtract={Subtract}
-                            data={data}
-                        />
-                    </div>
-                </div>
             </div>
-        </div>
-    ) : (
-        <div className="div-loader">
-            <img
-                alt="loader"
-                className="loader"
-                src="../assets/img/loader.svg"
-            />
+            <ToastContainer />;
         </div>
     );
 };

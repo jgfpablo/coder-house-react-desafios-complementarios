@@ -1,0 +1,23 @@
+.ItemDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    align-self: center;
+    background-image: url("../../../public/fondo-detail.jpg");
+    background-size: cover;
+    color: #d3ad7f;
+}
+.card-itemDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.img {
+    width: 500px;
+    height: 400px;
+}

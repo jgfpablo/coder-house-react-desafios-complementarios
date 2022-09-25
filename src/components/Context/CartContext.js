@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 
 const CartContext = (props) => {
     const [cart, setCart] = useState([]);
+    let array = [];
 
     const AddToCartList = (data, count) => {
         if (cart.length === 0) {
@@ -17,18 +18,12 @@ const CartContext = (props) => {
                     arr.cantidad = arr.cantidad + count;
                     data.cantidad = data.cantidad - count;
                     count = 0;
-                    console.log("se modifico 1");
                 } else {
                     if (cart.find((element) => element.id === data.id)) {
-                        console.log("no deberia entrar");
                     } else {
-                        console.log("se anadio 1");
                         let data2 = { ...data };
                         data2.cantidad = count;
-                        console.log({ ...data2 } + "esto es lo q se guarda");
                         data.cantidad = data.cantidad - count;
-                        console.log({ ...data } + "esto es la data");
-
                         let array = [...cart, data2];
                         setCart([...array]);
                         count = 0;
@@ -47,13 +42,13 @@ const CartContext = (props) => {
         });
     };
 
-    const Clear = () => {
+    const clear = () => {
         setCart([]);
     };
 
     return (
         <ContextCart.Provider
-            value={{ AddToCartList, cart, RemoveItemToCart, Clear }}
+            value={{ AddToCartList, cart, RemoveItemToCart, clear }}
         >
             {props.children}
         </ContextCart.Provider>

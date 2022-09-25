@@ -1,88 +1,48 @@
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import "../../css/ItemDetailContainer/ItemCount.css";
+import { Add, Subtract, Minimum } from "./ItemCount/AlertsAndCounts";
 
-import "../../css/ItemDetail/Count.css";
-import "react-toastify/dist/ReactToastify.css";
-
-const ItemCount = ({ Count, Add, Subtract, agregarAlCarrito }) => {
-    const [open, setOpen] = useState(true);
-
-    const alerta = () => {
-        if (Count === 0) {
-            toast.info("Debe Agregar almenos 1 producto!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        } else {
-            setOpen(false);
-            toast.info("Se agrego el producto al carrito!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-            agregarAlCarrito();
-        }
-    };
-
-    return (
+const ItemCount = ({ count, setCount, AddToCart, visibility, data }) => {
+    return visibility === true ? (
         <>
-            <h1 className="title">Cantidad</h1>
-            <div className="div-add-cart">
+            <div className="div-count">
                 <button
                     className="btn"
-                    onClick={() => {
-                        Subtract();
-                    }}
+                    onClick={() => Subtract(setCount, count)}
                 >
                     -
                 </button>
-
-                <span className="span-count-order">{Count}</span>
-
+                <span className="count">{count}</span>
                 <button
                     className="btn"
-                    onClick={() => {
-                        Add();
-                    }}
+                    onClick={() => Add(setCount, count, data)}
                 >
                     +
                 </button>
             </div>
 
-            <div className="center">
-                {open ? (
-                    <span className="btn-add-cart " onClick={() => alerta()}>
-                        Agregar Al Carrito
-                    </span>
-                ) : (
-                    <>
-                        <span className="btn-add-cart">
-                            <Link to="/cart">Ir Al Carrito</Link>
-                        </span>
-                    </>
-                )}
-            </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={3000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            {count === 0 ? (
+                <button className="addToCart" onClick={() => Minimum()}>
+                    Agregar Al Carrito
+                </button>
+            ) : (
+                <button
+                    className="addToCart"
+                    onClick={() => {
+                        AddToCart();
+                    }}
+                >
+                    Agregar Al Carrito
+                </button>
+            )}
+        </>
+    ) : (
+        <>
+            <Link to="/cart">
+                <button className="addToCart" type="">
+                    Ir Al Carrito
+                </button>
+            </Link>
         </>
     );
 };

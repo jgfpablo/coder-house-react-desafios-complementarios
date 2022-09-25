@@ -1,15 +1,17 @@
-import "../css/NavBar/NavBar.css";
-
-import CartWidget from "./NavBar/CartWidget";
 import Logo from "./NavBar/Logo";
 import Nav from "./NavBar/Nav";
+import CartWidget from "./NavBar/CartWidget";
 
-export const NavBar = () => {
+import "../css/NavBar/NavBar.css";
+
+const NavBar = () => {
     return (
-        <nav className="nav-full">
+        <div className="NavBar">
             <Logo />
             <Nav />
             <CartWidget />
-        </nav>
+        </div>
     );
 };
+
+export default NavBar;

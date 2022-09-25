@@ -1,11 +1,10 @@
 import Item from "./Item";
-
 import "../../css/ItemListContainer/ItemList.css";
-const ItemList = ({ Data }) => {
+const ItemList = ({ listProducts }) => {
     return (
-        <div className="list">
-            {Data.map((item, index) => {
-                return <Item item={item} key={index} />;
+        <div className="ItemList">
+            {listProducts?.map((product, index) => {
+                return <Item key={index} product={product} />;
             })}
         </div>
     );

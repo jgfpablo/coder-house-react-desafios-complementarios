@@ -1,18 +1,16 @@
-.cartWidget {
-    width: 20vw;
+.CartWidget {
+    font-size: 2rem;
+    width: 10%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-}
-.active {
-    color: #d3ad7f !important;
+    padding-left: 100px;
 }
 
-.carrito {
-    color: white;
-}
-
-.carrito:hover {
-    color: #d3ad7f;
+.quantity {
+    font-size: 1rem;
+    background: #d3ad7f;
+    color: black;
+    padding: 0 5px;
+    vertical-align: top;
+    border-radius: 50%;
+    font-weight: bold;
 }

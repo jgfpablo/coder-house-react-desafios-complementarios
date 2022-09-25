@@ -1,34 +1,33 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import { ItemListContainer } from "./ItemListContainer";
-import { ItemDetailContainer } from "./ItemDetailContainer";
-
-import { NavBar } from "./NavBar";
-import Footer from "./Footer";
+import NavBar from "./NavBar";
+import ItemListContainer from "./ItemListContainer";
+import ItemDetailContainer from "./ItemDetailContainer";
 import Cart from "./Cart";
-
-export const Router = () => {
+import CartProvider from "./Context/CartProvider";
+const Router = () => {
     return (
         <>
-            <BrowserRouter>
-                <NavBar />
+            <CartProvider>
+                <BrowserRouter>
+                    <NavBar />
+                    <Routes>
+                        <Route path={`/`} element={<ItemListContainer />} />
+                        <Route
+                            path={`/category/:categoryId`}
+                            element={<ItemListContainer />}
+                        />
+                        <Route
+                            path={"/item/:itemId"}
+                            element={<ItemDetailContainer />}
+                        />
 
-                <Routes>
-                    <Route path={`/`} element={<ItemListContainer />} />
-                    <Route
-                        path={`/category/:idCategory`}
-                        element={<ItemListContainer />}
-                    />
-
-                    <Route
-                        path={`item/:idProduct`}
-                        element={<ItemDetailContainer />}
-                    />
-
-                    <Route path={`/cart`} element={<Cart />} />
-                </Routes>
-                <Footer />
-            </BrowserRouter>
+                        <Route path="/cart" element={<Cart />} />
+                    </Routes>
+                </BrowserRouter>
+            </CartProvider>
         </>
     );
 };
+
+export default Router;

@@ -1,51 +1,43 @@
 import ItemList from "./ItemListContainer/ItemList";
-import productos from "../products";
+import loader from "../assets/loader.svg";
 import "../css/ItemListContainer/ItemListContainer.css";
-
+import products from "../products";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export const ItemListContainer = () => {
-    const [data, setData] = useState([]);
-
-    const { idCategory } = useParams();
-
-    const [loading, setLoading] = useState(false);
+const ItemListContainer = () => {
+    const [listProducts, setListProducts] = useState();
+    const [loading, setLoading] = useState(true);
+    const { categoryId } = useParams();
 
     useEffect(() => {
-        setLoading(false);
-        if (idCategory) {
-            setTimeout(() => {
-                productos.then((res) =>
-                    setData(
-                        res.filter(
-                            (res) =>
-                                res.categoria === idCategory.replace("-", " ")
+        setTimeout(() => {
+            products
+                .then((products) =>
+                    setListProducts(
+                        products.filter((produc) =>
+                            categoryId
+                                ? produc.categoria ===
+                                  categoryId.replace("-", " ")
+                                : produc
                         )
                     )
-                );
-                setLoading(true);
-            }, 2000);
-        } else {
-            setLoading(false);
-            setTimeout(() => {
-                productos.then((res) => setData(res));
-                setLoading(true);
-            }, 2000);
-        }
-    }, [idCategory]);
+                )
+                .then(setLoading(false));
+        }, 3000);
 
-    return loading === true ? (
-        <div className="list">
-            <ItemList Data={data} />
+        return setLoading(true);
+    }, [categoryId]);
+
+    return loading === false ? (
+        <div>
+            <ItemList listProducts={listProducts} />
         </div>
     ) : (
-        <div className="div-loader">
-            <img
-                alt="loader"
-                className="loader"
-                src="../assets/img/loader.svg"
-            />
+        <div className="loader">
+            <img className="img-loader" alt="loader" src={loader} />
         </div>
     );
 };
+
+export default ItemListContainer;

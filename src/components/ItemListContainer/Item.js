@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom";
 import "../../css/ItemListContainer/item.css";
-
-const Item = ({ item }) => {
+const Item = ({ product }) => {
     return (
-        <div className="card-products">
-            <img className="product-img" src={item.imagen} alt="img-product" />
+        <div className="Item">
+            <img className="img" alt="product" src={product.imagen} />
+            <span className="name">{product.nombre}</span>
+            <span className="description">{product.descripcion}</span>
+            <span className="stock">
+                Cantidad Disponible : {product.cantidad}
+            </span>
 
-            <span className="product-name"> {item.nombre} </span>
-
-            <span className="product-name"> {item.cantidad} </span>
-
-            <div className="div-add-cart">
-                <span className="btn-add-cart">
-                    <Link to={`/item/` + item.id}>Preview</Link>
-                </span>
-            </div>
+            <Link className="a" to={"/item/" + product.id}>
+                <button className="button">Ver Detalles del Producto</button>
+            </Link>
         </div>
     );
 };

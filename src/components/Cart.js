@@ -1,15 +1,19 @@
 import { useContext } from "react";
-import { ContextCart } from "./Context/CartContext";
+import { CartContext } from "./Context/CartProvider";
 
-import "../css/table.css";
+import "../css/Cart/Cart.css";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const { cart, RemoveItemToCart, Clear } = useContext(ContextCart);
+    const { list, Clear, RemoveItemToCart } = useContext(CartContext);
 
-    return cart.length === 0 ? (
+    return list.length === 0 ? (
         <div className="table-container">
             <div className="text-cart">
                 Usted no posee productos en el carrito
+                <Link to="/" className="Ir-Inicio">
+                    Ir a Inicio
+                </Link>
             </div>
         </div>
     ) : (
@@ -22,28 +26,30 @@ const Cart = () => {
                             <th>IMAGEN</th>
                             <th>PRECIO</th>
                             <th>CANTIDAD</th>
+                            <th>TOTAL</th>
                             <th>ACCION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {cart.map((stat, index) => {
+                        {list.map((item, index) => {
                             return (
                                 <tr className="tr" key={index}>
-                                    <td className="td">{stat.nombre}</td>
+                                    <td className="td">{item.nombre}</td>
                                     <td>
                                         <img
                                             alt="product"
-                                            className="img"
-                                            src={stat.imagen}
+                                            className="img-table"
+                                            src={item.imagen}
                                         />
                                     </td>
-                                    <td>{stat.precio}</td>
-                                    <td>{stat.cantidad}</td>
+                                    <td>{"$" + item.precio}</td>
+                                    <td>{item.cantidad}</td>
+                                    <td>{"$" + item.precio * item.cantidad}</td>
                                     <td>
                                         <button
                                             className="quitar"
                                             onClick={() =>
-                                                RemoveItemToCart(stat.id)
+                                                RemoveItemToCart(item.id)
                                             }
                                         >
                                             Quitar
@@ -55,6 +61,7 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
+
             <div className="div-delete">
                 <button className="btn-delete" onClick={() => Clear()}>
                     Vaciar Carrito

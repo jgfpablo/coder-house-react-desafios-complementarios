@@ -1,18 +1,15 @@
-import "../../css/NavBar/Logo.css";
-
-import logo from "../../css/logo-menu.png";
 import { Link } from "react-router-dom";
+import "../../css/NavBar/Logo.css";
+import logo from "../../assets/logo-menu.png";
 
 const Logo = () => {
     return (
-        <div className="logo">
-            <Link to="/">
-                <div className="div-logo">
-                    <img className="img-logo" alt="logo" src={logo} />
-                    <span className="span-logo">Coffee</span>
-                </div>
-            </Link>
-        </div>
+        <Link className="a-logo" to="/">
+            <div className="Logo">
+                <img alt="logo" className="img-logo" src={logo} />
+                Coffee
+            </div>
+        </Link>
     );
 };
 

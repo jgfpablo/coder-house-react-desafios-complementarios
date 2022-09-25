@@ -1,7 +1,8 @@
-.nav-full {
+.NavBar {
     display: flex;
+    justify-content: space-around;
+    height: 80px;
     background-color: black;
     color: white;
-    height: 15vh;
     align-items: center;
 }

@@ -1,34 +1,20 @@
-.nav {
-    display: flex;
-    height: 10vh;
-    width: 70vw;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+.Nav {
+    font-size: 2rem;
+    width: 80%;
 }
 
-.nav-li {
+.nav-ul {
     display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.75);
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-}
-.navegacion {
-    width: 80vw;
+    justify-content: space-between;
 }
 
-.ul {
-    text-decoration: none;
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
+li {
+    list-style-type: none;
 }
 
-.active {
-    color: #d3ad7f;
+.on {
+    color: chocolate;
+}
+.off {
+    color: white;
 }
