@@ -2,7 +2,7 @@
 
 ## Este es un proyecto de aprendizaje para CoderHouse el curso de ReactJS, implementando un carrito virtual o eCommerce.
 
-![CoffeeWeb](https://user-images.githubusercontent.com/75111462/192163310-8afa5c40-5937-4a3d-9294-2349d6023699.gif)
+![CoffeeWeb -CoderHouse](https://user-images.githubusercontent.com/75111462/192163659-47fb1fc3-57aa-4557-a1fb-07abb1813976.gif)
 
 ## Dependencias:
 
