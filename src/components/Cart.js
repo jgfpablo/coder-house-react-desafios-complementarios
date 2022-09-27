@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "./Context/CartProvider";
-
+import { BsTrash } from "react-icons/bs";
 import "../css/Cart/Cart.css";
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Cart = () => {
                                                 RemoveItemToCart(item.id)
                                             }
                                         >
-                                            Quitar
+                                            <BsTrash />
                                         </button>
                                     </td>
                                 </tr>
