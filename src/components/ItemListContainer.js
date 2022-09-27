@@ -1,44 +1,29 @@
 import ItemList from "./ItemListContainer/ItemList";
 import loader from "../assets/loader.svg";
 import "../css/ItemListContainer/ItemListContainer.css";
-import products from "../products";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { db } from "./Firebase/FirebaseConfig";
 
-import { collection, getDocs } from "firebase/firestore";
-import { async } from "@firebase/util";
+import { getItems, getItemsByCondition } from "../api";
 
 const ItemListContainer = () => {
     const [listProducts, setListProducts] = useState();
     const [loading, setLoading] = useState(true);
-
     const { categoryId } = useParams();
 
     useEffect(() => {
-        const fetchData = async () => {
-            const data = await getDocs(collection(db, "Bebidas Calientes"));
-            console.log(data.docs);
-        };
-
-        fetchData();
-
+        setLoading(true);
         setTimeout(() => {
-            products
-                .then((products) =>
-                    setListProducts(
-                        products.filter((produc) =>
-                            categoryId
-                                ? produc.categoria ===
-                                  categoryId.replace("-", " ")
-                                : produc
-                        )
-                    )
-                )
-                .then(setLoading(false));
+            categoryId === undefined
+                ? getItems(setLoading).then((products) =>
+                      setListProducts(products)
+                  )
+                : getItemsByCondition(
+                      categoryId.replace("-", " "),
+                      setLoading
+                  ).then((products) => setListProducts(products));
         }, 3000);
-
-        return setLoading(true);
+        console.log(categoryId);
     }, [categoryId]);
 
     return loading === false ? (

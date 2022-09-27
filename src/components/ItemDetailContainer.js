@@ -4,15 +4,14 @@ import products from "../products";
 import { useState } from "react";
 import "../css/ItemDetailContainer/ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { getItemsByInternId, getItemById } from "../api";
 const ItemDetailContainer = () => {
     const [item, setItem] = useState();
     const [loading, setLoading] = useState(true);
     const { itemId } = useParams();
 
     setTimeout(() => {
-        products
-            .then((products) => setItem(products[itemId]))
-            .then(setLoading(false));
+        getItemById(itemId, setLoading).then((products) => setItem(products));
     }, 3000);
 
     return loading === false ? (

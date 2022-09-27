@@ -78,7 +78,7 @@ const products = new Promise((resolve) => {
             categoria: "Bebidas Frias",
             imagen: "../assets/img/productos/bebidas_frias/te-limon.png",
             descripcion:
-                "Una exquisita base de leche condensada, rico café espresso, espuma de leche, canela y cacao. ¡Lo mejor para endulzar tu día!",
+                "Infusión a base de hojas de limon de  sabor y aroma son muy agradables",
         },
         {
             id: 8,

@@ -1,4 +1,5 @@
 .Item {
+    max-height: 600px !important;
     border: 1px solid black;
     width: 400px;
     display: flex;
