@@ -9,10 +9,12 @@ const CartProvider = ({ children }) => {
         let product = { ...item };
         product.cantidad = quantity;
 
-        let result = list.find((items) => items.id === product.id);
+        let result = list.find(
+            (items) => items.idInterno === product.idInterno
+        );
         result !== undefined
             ? list.map((items) => {
-                  if (items.id === product.id) {
+                  if (items.idInterno === product.idInterno) {
                       items.cantidad = items.cantidad + product.cantidad;
                   }
               })
@@ -21,7 +23,7 @@ const CartProvider = ({ children }) => {
 
     const RemoveItemToCart = (id) => {
         list.map((item, index) => {
-            if (item.id === id) {
+            if (item.idInterno === id) {
                 list.splice(index, 1);
                 setList([...list]);
             }

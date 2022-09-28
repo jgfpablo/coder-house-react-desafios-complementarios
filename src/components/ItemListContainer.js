@@ -23,7 +23,6 @@ const ItemListContainer = () => {
                       setLoading
                   ).then((products) => setListProducts(products));
         }, 3000);
-        console.log(categoryId);
     }, [categoryId]);
 
     return loading === false ? (

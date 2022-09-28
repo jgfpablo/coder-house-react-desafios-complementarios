@@ -49,7 +49,7 @@ const Cart = () => {
                                         <button
                                             className="quitar"
                                             onClick={() =>
-                                                RemoveItemToCart(item.id)
+                                                RemoveItemToCart(item.idInterno)
                                             }
                                         >
                                             <BsTrash />
