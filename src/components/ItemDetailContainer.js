@@ -1,10 +1,9 @@
 import ItemDetail from "./ItemDetailContainer/ItemDetail";
 import loader from "../assets/loader.svg";
-import products from "../products";
 import { useState } from "react";
 import "../css/ItemDetailContainer/ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
-import { getItemsByInternId, getItemById } from "../api";
+import { getItemById } from "../api";
 const ItemDetailContainer = () => {
     const [item, setItem] = useState();
     const [loading, setLoading] = useState(true);
