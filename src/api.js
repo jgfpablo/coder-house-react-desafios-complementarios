@@ -7,14 +7,14 @@ import {
     addDoc,
     deleteDoc,
     updateDoc,
-    // setDoc,
+    setDoc,
     where,
 } from "firebase/firestore";
 import { db } from "./components/Firebase/FirebaseConfig";
 
 // CREATE
 export const createItem = async (obj) => {
-    const colRef = collection(db, "productos");
+    const colRef = collection(db, "ordenes");
     const data = await addDoc(colRef, obj);
     return data.id;
 };
@@ -24,6 +24,15 @@ export const updateItem = async (id, obj) => {
     const colRef = collection(db, "productos");
     await updateDoc(doc(colRef, id), obj);
 };
+
+//UPDATE ITEMS
+// export const updateItem2 = async (id, obj) => {
+//     const productRef = doc(db, "productos", id);
+
+//     await updateDoc(productRef, {
+//         cantidad: obj,
+//     });
+// };
 
 // READ
 export const getItems = async (setLoading) => {
@@ -48,6 +57,12 @@ export const getItemById = async (id, setLoading) => {
     const colRef = collection(db, "productos");
     const result = await getDoc(doc(colRef, id));
     setLoading(false);
+    return result.data();
+};
+
+export const getItemById2 = async (id) => {
+    const colRef = collection(db, "productos");
+    const result = await getDoc(doc(colRef, id));
     return result.data();
 };
 

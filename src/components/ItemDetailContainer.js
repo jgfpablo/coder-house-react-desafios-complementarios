@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../css/ItemDetailContainer/ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 import { getItemById } from "../api";
+
 const ItemDetailContainer = () => {
     const [item, setItem] = useState();
     const [loading, setLoading] = useState(true);

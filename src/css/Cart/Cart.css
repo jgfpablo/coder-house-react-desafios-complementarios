@@ -76,8 +76,24 @@ tr:hover td {
     color: black;
     border: 1px solid black;
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
+    margin-left: 20px;
+    margin-top: -50px;
+}
+
+.btn-build {
+    width: 200px;
+    height: 100px;
+    margin-bottom: 30px;
+    background-color: #b28a59;
+    color: black;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: -50px;
 }
 
 .quitar {
@@ -97,4 +113,82 @@ tr:hover td {
 
 .Ir-Inicio {
     margin-left: 10px;
+}
+
+/* ----------------------------- */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #373737;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    min-height: 500px;
+}
+
+.close {
+    color: #d3ad7f;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: rgb(30, 29, 29);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.title-modal {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #d3ad7f;
+}
+
+.modal-div-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input {
+    margin: 40px;
+    font-size: 2rem;
+}
+
+.button-modal {
+    font-size: 2rem;
+    color: black;
+    background-color: #b28a59;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.div-total {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.total {
+    margin-top: -70px;
+    font-size: 2rem;
+    color: #d3ad7f;
+    margin-right: 80px;
+    font-weight: 800;
 }
